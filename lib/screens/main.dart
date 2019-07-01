@@ -17,6 +17,9 @@
 import 'package:flutter/material.dart';
 import 'package:follower_detective/values/colors.dart';
 
+import 'LoginScreen.dart';
+
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -24,32 +27,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Follower Detective',
+      title: 'Login',
       theme: ThemeData(
         primarySwatch: AppColors.colorPrimary,
-        scaffoldBackgroundColor: AppColors.background,
+        scaffoldBackgroundColor: Colors.transparent,
       ),
-      home: HomePage(),
+      home: Scaffold(
+        body: HomePage(),
+      ),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-
-        ],
+    return Container(
+      padding: EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/images/login_bg.jpg"),
+          fit: BoxFit.cover,
+        ),
       ),
+      child: LoginScreen()
     );
   }
 }
