@@ -2,6 +2,10 @@
 
 Analize your Instagram profile. Find out your unfollowers and more.
 
+## Screenshots
+
+<img src="https://github.com/volkanatalan/FollowerDetective/blob/master/screenshots/Screenshot_2019-07-02-02-44-09.png" height="500" alt="Login screen"></img>
+
 ## License
 
 Copyright 2019 Volkan ATALAN
