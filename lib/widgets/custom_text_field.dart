@@ -19,8 +19,9 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget{
   String label;
   String imageAsset;
+  bool isObscureText;
 
-  CustomTextField(this.imageAsset, this.label);
+  CustomTextField(this.imageAsset, this.label, this.isObscureText);
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +46,7 @@ class CustomTextField extends StatelessWidget{
                 Padding(padding: EdgeInsets.all(5),),
                 Expanded(
                   child: TextField(
+                    obscureText: isObscureText,
                     decoration: InputDecoration(
                       hintText: label,
                       hintStyle: TextStyle(

@@ -28,9 +28,9 @@ class LoginScreen extends StatelessWidget{
         children: <Widget>[
           Image.asset("assets/images/detective_logo.png", width: 300, height: 300,),
           Padding(padding: EdgeInsets.all(20),),
-          CustomTextField('assets/icons/account_circle.png', English.username),
+          CustomTextField('assets/icons/account_circle.png', English.username, false,),
           Padding(padding: EdgeInsets.all(5),),
-          CustomTextField('assets/icons/lock.png', English.password),
+          CustomTextField('assets/icons/lock.png', English.password, true,),
           Padding(padding: EdgeInsets.all(20),),
           LoginButton()
         ],
