@@ -15,9 +15,9 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:follower_detective/values/colors.dart';
-
-import 'LoginScreen.dart';
+import 'package:follower_detective/values/app_colors.dart';
+import 'user_home_page_screen.dart';
+import 'login_screen.dart';
 
 
 void main() => runApp(MyApp());
@@ -30,11 +30,22 @@ class MyApp extends StatelessWidget {
       title: 'Login',
       theme: ThemeData(
         primarySwatch: AppColors.colorPrimary,
+        canvasColor: AppColors.colorPrimary,
         scaffoldBackgroundColor: Colors.transparent,
+        textTheme: TextTheme(
+          body1: TextStyle(color: Colors.white),
+        )
       ),
+
       home: Scaffold(
-        body: HomePage(),
+        body: SafeArea(
+          child: HomePage(),
+        )
       ),
+
+      routes: {
+        UserHomePageScreen.routeName: (context) => UserHomePageScreen(),
+      }
     );
   }
 }

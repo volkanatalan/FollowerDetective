@@ -18,6 +18,11 @@ import 'package:flutter/material.dart';
 import 'package:follower_detective/values/english.dart';
 
 class LoginButton extends StatefulWidget{
+  final double fontSize;
+  final VoidCallback onPressed;
+
+  LoginButton(this.fontSize, {this.onPressed});
+
   @override
   _LoginButtonState createState() => _LoginButtonState();
 }
@@ -26,6 +31,7 @@ class LoginButton extends StatefulWidget{
 class _LoginButtonState extends State<LoginButton>{
   double _paddingLeft = 0;
   double _paddingTop = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +42,7 @@ class _LoginButtonState extends State<LoginButton>{
           child: Text(
             English.login_all_caps,
             style: TextStyle(
-              fontSize: 60,
+              fontSize: widget.fontSize,
               color: Colors.pinkAccent,
             ),
           ),
@@ -47,11 +53,12 @@ class _LoginButtonState extends State<LoginButton>{
             child: Text(
               English.login_all_caps,
               style: TextStyle(
-                fontSize: 60,
+                fontSize: widget.fontSize,
                 color: Colors.lightBlueAccent,
               ),
             ),
           ),
+          onTap: widget.onPressed,
           onTapDown: (details){
             setState(() {
               _paddingLeft = 2;
